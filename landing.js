@@ -11,7 +11,7 @@ function fmtNum(n) {
 
 async function loadData() {
   if (typeof SITE_DATA !== "undefined") return SITE_DATA;
-  for (const url of ["data.json", "https://cdn.jsdelivr.net/gh/sudnik2010/cursor_disk@main/docs/data.json"]) {
+  for (const url of ["data.json", "https://cdn.jsdelivr.net/gh/akuazuk/mrs-scheta@main/data.json"]) {
     try {
       const res = await fetch(url);
       if (res.ok) return res.json();
@@ -178,7 +178,8 @@ function renderAnalytics(d) {
 }
 
 async function init() {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
   startTimer();
   initReveal();
   initBurger();

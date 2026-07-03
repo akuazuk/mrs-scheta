@@ -301,9 +301,9 @@ blockquote {
 }
 .logo--footer .logo__mark { width: 32px; height: 32px; font-size: 0.9rem; }
 
-/* Reveal animation */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Reveal animation — без JS контент остаётся видимым */
+html.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* Responsive */
 @media (max-width: 900px) {

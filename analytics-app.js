@@ -28,7 +28,7 @@ async function loadData() {
   if (typeof SITE_DATA !== "undefined") return SITE_DATA;
   const sources = [
     "data.json",
-    "https://cdn.jsdelivr.net/gh/sudnik2010/cursor_disk@main/docs/data.json",
+    "https://cdn.jsdelivr.net/gh/akuazuk/mrs-scheta@main/data.json",
   ];
   for (const url of sources) {
     try {

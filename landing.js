@@ -1,5 +1,5 @@
 const PROMO_END = new Date("2026-07-15T23:59:59");
-const FORM_EMAIL = "akuazuk@gmail.com";
+const FORM_EMAIL = "akuazuk.ads@gmail.com";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${encodeURIComponent(FORM_EMAIL)}`;
 const SITE_URL = "https://akuazuk.github.io/mrs-scheta/";
 

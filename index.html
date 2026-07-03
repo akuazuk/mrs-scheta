@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Аналитика счетов за рекламные услуги — Мастерская рекламного слова" />
+  <title>Мастерская рекламного слова — Счета и аналитика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-mesh" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">М</span>
+        <span>Мастерская рекламного слова</span>
+      </a>
+      <div class="nav__links">
+        <a href="#stats">Сводка</a>
+        <a href="#platforms">Площадки</a>
+        <a href="#charts">Динамика</a>
+        <a href="#services">Услуги</a>
+        <a href="#company">Реквизиты</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero__content">
+      <p class="hero__badge">Рекламная аналитика · 2025–2026</p>
+      <h1 class="hero__title">
+        Счета за digital&#8209;маркетинг
+        <span class="gradient-text">в одном месте</span>
+      </h1>
+      <p class="hero__sub" id="hero-sub">Загрузка данных…</p>
+      <div class="hero__actions">
+        <a href="#charts" class="btn btn--primary">Смотреть динамику</a>
+        <a href="#company" class="btn btn--ghost">Реквизиты</a>
+      </div>
+    </div>
+    <div class="hero__card glass">
+      <p class="hero__card-label">Итого за <span id="hero-year">2026</span></p>
+      <p class="hero__card-value" id="hero-total">—</p>
+      <p class="hero__card-meta" id="hero-meta"></p>
+    </div>
+  </header>
+
+  <section class="section" id="stats">
+    <div class="container">
+      <h2 class="section__title">Ключевые показатели</h2>
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="platforms">
+    <div class="container">
+      <h2 class="section__title">Площадки за <span id="platform-year">2026</span></h2>
+      <p class="section__desc">Распределение выставленных счетов по рекламным каналам</p>
+      <div class="platform-grid" id="platform-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="charts">
+    <div class="container">
+      <h2 class="section__title">Динамика счетов</h2>
+      <div class="charts-grid">
+        <div class="chart-card glass">
+          <h3>Тренд по площадкам</h3>
+          <canvas id="chart-lines"></canvas>
+        </div>
+        <div class="chart-card glass">
+          <h3>Структура бюджета</h3>
+          <canvas id="chart-doughnut"></canvas>
+        </div>
+        <div class="chart-card glass chart-card--wide">
+          <h3>Суммарные счета по месяцам</h3>
+          <canvas id="chart-bars"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <h2 class="section__title">Услуги в счетах</h2>
+      <p class="section__desc">Виды работ по договору от 01.02.2024</p>
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="company">
+    <div class="container">
+      <h2 class="section__title">Реквизиты</h2>
+      <div class="company-grid">
+        <div class="company-card glass">
+          <h3>Исполнитель</h3>
+          <dl id="company-info"></dl>
+        </div>
+        <div class="company-card glass">
+          <h3>Заказчик</h3>
+          <dl id="client-info"></dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="footer-year"></span> ООО «Мастерская рекламного слова»</p>
+      <p class="footer__meta">Данные из Google Таблиц · Обновлено <span id="footer-date"></span></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

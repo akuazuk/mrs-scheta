@@ -3,81 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Аналитика счетов за рекламные услуги — Мастерская рекламного слова" />
-  <title>Мастерская рекламного слова — Счета и аналитика</title>
+  <meta name="description" content="Мастерская рекламного слова — digital-агентство в Минске. Google Ads, Meta, Яндекс, TikTok с прозрачными счетами." />
+  <meta property="og:title" content="Мастерская рекламного слова — Digital-маркетинг в Минске" />
+  <meta property="og:description" content="Настраиваем рекламу, которая приводит клиентов. Прозрачные счета и отчётность." />
+  <title>Мастерская рекламного слова — Digital-агентство, Минск</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
 </head>
 <body>
-  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="blobs" aria-hidden="true">
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+  </div>
 
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-icon">М</span>
-        <span>Мастерская рекламного слова</span>
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <span class="logo__mark">М</span>
+        <span class="logo__text">Мастерская<br><small>рекламного слова</small></span>
       </a>
-      <div class="nav__links">
-        <a href="#stats">Сводка</a>
-        <a href="#platforms">Площадки</a>
-        <a href="#charts">Динамика</a>
+      <nav class="nav" id="nav">
         <a href="#services">Услуги</a>
-        <a href="#company">Реквизиты</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="top">
-    <div class="hero__content">
-      <p class="hero__badge">Рекламная аналитика · 2025–2026</p>
-      <h1 class="hero__title">
-        Счета за digital&#8209;маркетинг
-        <span class="gradient-text">в одном месте</span>
-      </h1>
-      <p class="hero__sub" id="hero-sub">Загрузка данных…</p>
-      <div class="hero__actions">
-        <a href="#charts" class="btn btn--primary">Смотреть динамику</a>
-        <a href="#company" class="btn btn--ghost">Реквизиты</a>
-      </div>
-    </div>
-    <div class="hero__card glass">
-      <p class="hero__card-label">Итого за <span id="hero-year">2026</span></p>
-      <p class="hero__card-value" id="hero-total">—</p>
-      <p class="hero__card-meta" id="hero-meta"></p>
+        <a href="#case">Кейсы</a>
+        <a href="#analytics">Аналитика</a>
+        <a href="#promo">Акция</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a href="#contact" class="btn btn--sm btn--primary">Оставить заявку</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span></button>
     </div>
   </header>
 
-  <section class="section" id="stats">
-    <div class="container">
-      <h2 class="section__title">Ключевые показатели</h2>
-      <div class="stats-grid" id="stats-grid"></div>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text reveal">
+        <span class="pill">Digital-агентство · Минск</span>
+        <h1>Настраиваем рекламу, которая <span class="grad">приводит клиентов</span></h1>
+        <p class="lead">ООО «Мастерская рекламного слова» ведёт Google Ads, Meta, Яндекс и TikTok с прозрачной ежемесячной отчётностью и понятными счетами — без сюрпризов в конце месяца.</p>
+        <ul class="hero__list">
+          <li>Google Ads и Meta — performance-маркетинг</li>
+          <li>Яндекс и TikTok — расширение охвата</li>
+          <li>Ежемесячные счета и акты по договору</li>
+        </ul>
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--primary">Получить аудит рекламы</a>
+          <a href="#case" class="btn btn--outline">Смотреть кейс Кравиры</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal">
+        <div class="hero__img-wrap">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="Аналитика рекламных кампаний" loading="eager" />
+          <div class="hero__float card-float">
+            <span class="card-float__label">Бюджет 2026</span>
+            <strong id="hero-total">60 946 BYN</strong>
+            <span class="card-float__meta">4 площадки · 49 счетов</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section section--alt" id="platforms">
-    <div class="container">
-      <h2 class="section__title">Площадки за <span id="platform-year">2026</span></h2>
-      <p class="section__desc">Распределение выставленных счетов по рекламным каналам</p>
-      <div class="platform-grid" id="platform-grid"></div>
+  <section class="trust">
+    <div class="container trust__inner">
+      <span>Работаем с официальными кабинетами</span>
+      <div class="trust__logos">
+        <span class="trust__logo trust__logo--g">Google Ads</span>
+        <span class="trust__logo trust__logo--m">Meta</span>
+        <span class="trust__logo trust__logo--y">Яндекс</span>
+        <span class="trust__logo trust__logo--t">TikTok</span>
+      </div>
+      <span class="trust__note">Договор · без НДС · УСН</span>
     </div>
   </section>
 
-  <section class="section" id="charts">
+  <section class="section section--lavender" id="services">
     <div class="container">
-      <h2 class="section__title">Динамика счетов</h2>
-      <div class="charts-grid">
-        <div class="chart-card glass">
-          <h3>Тренд по площадкам</h3>
+      <div class="section__head reveal">
+        <span class="section__tag">Услуги</span>
+        <h2>Комплексное ведение рекламы на четырёх площадках</h2>
+        <p>Один подрядчик вместо четырёх — стратегия, настройка, оптимизация и прозрачная отчётность.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card service-card--google reveal">
+          <div class="service-card__icon">G</div>
+          <h3>Google Ads</h3>
+          <p>Разработка маркетинговой стратегии, настройка и оптимизация параметров аккаунта. Коррекция бюджета по факту расхода.</p>
+          <span class="service-card__tag">Контекст · Performance</span>
+        </article>
+        <article class="service-card service-card--meta reveal">
+          <div class="service-card__icon">M</div>
+          <h3>Meta</h3>
+          <p>Таргетированная реклама в Facebook и Instagram. Ведение кампаний, тестирование креативов и аудиторий.</p>
+          <span class="service-card__tag">Facebook · Instagram</span>
+        </article>
+        <article class="service-card service-card--yandex reveal">
+          <div class="service-card__icon">Я</div>
+          <h3>Яндекс</h3>
+          <p>Настройка и сопровождение рекламных кампаний в поиске и сетях Яндекса. Фиксированное сопровождение.</p>
+          <span class="service-card__tag">от 550 BYN/мес</span>
+        </article>
+        <article class="service-card service-card--tiktok reveal">
+          <div class="service-card__icon">T</div>
+          <h3>TikTok</h3>
+          <p>Запуск и ведение рекламы в TikTok Ads. Видеоформаты для охвата молодой аудитории.</p>
+          <span class="service-card__tag">от 550 BYN/мес</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">Почему мы</span>
+        <h2>Digital-маркетинг с прозрачными счетами</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-card__icon">📊</div>
+          <h3>Прозрачные счета</h3>
+          <p>Каждый месяц — детализированный счёт: услуги, коррекции, итого. Вы точно знаете, за что платите.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon">🎯</div>
+          <h3>Фокус на результат</h3>
+          <p>Не клики ради кликов — заявки, звонки и записи для вашего бизнеса. Измеримый performance.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon">🔗</div>
+          <h3>Один подрядчик</h3>
+          <p>Google, Meta, Яндекс и TikTok — в единой стратегии, без поиска отдельных специалистов.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon">📍</div>
+          <h3>Минск, личный контакт</h3>
+          <p>Работаем с локальным бизнесом, понимаем белорусский рынок и специфику УСН.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--peach" id="case">
+    <div class="container case">
+      <div class="case__img reveal">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Медицинский центр" loading="lazy" />
+      </div>
+      <div class="case__content reveal">
+        <span class="section__tag">Кейс</span>
+        <h2>ОДО «Медицинский центр Кравира»</h2>
+        <p>С февраля 2024 года ведём digital-рекламу медицинского центра на пр. Победителей в Минске. Подключили Google Ads и Meta, с 2026 года — Яндекс и TikTok.</p>
+        <div class="case__stats">
+          <div><strong id="case-total">60 946</strong><span>BYN счетов за 2026</span></div>
+          <div><strong>7</strong><span>месяцев ведения</span></div>
+          <div><strong>48,8%</strong><span>бюджета — Google</span></div>
+          <div><strong>4</strong><span>площадки в стратегии</span></div>
+        </div>
+        <blockquote>«Наконец-то понятно, сколько уходит на рекламу и что мы за это получаем. Счета приходят вовремя, всё по договору.»</blockquote>
+        <a href="#analytics" class="btn btn--outline">Смотреть аналитику</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--blue" id="analytics">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">Аналитика</span>
+        <h2>Реальные цифры из счетов</h2>
+        <p>Данные обновляются из Google Таблиц · <a href="analytics.html">полный дашборд →</a></p>
+      </div>
+      <div class="analytics-stats reveal" id="analytics-stats"></div>
+      <div class="charts">
+        <div class="chart-box reveal">
+          <h3>Динамика по площадкам</h3>
           <canvas id="chart-lines"></canvas>
         </div>
-        <div class="chart-card glass">
-          <h3>Структура бюджета</h3>
+        <div class="chart-box reveal">
+          <h3>Структура бюджета 2026</h3>
           <canvas id="chart-doughnut"></canvas>
         </div>
-        <div class="chart-card glass chart-card--wide">
+        <div class="chart-box chart-box--wide reveal">
           <h3>Суммарные счета по месяцам</h3>
           <canvas id="chart-bars"></canvas>
         </div>
@@ -85,37 +193,109 @@
     </div>
   </section>
 
-  <section class="section section--alt" id="services">
+  <section class="section promo" id="promo">
     <div class="container">
-      <h2 class="section__title">Услуги в счетах</h2>
-      <p class="section__desc">Виды работ по договору от 01.02.2024</p>
-      <div class="services-grid" id="services-grid"></div>
+      <div class="promo__card reveal">
+        <div class="promo__text">
+          <span class="pill pill--hot">Акция · до 15 июля 2026</span>
+          <h2>Старт лета — аудит рекламы в подарок</h2>
+          <p>При заключении договора на ведение Google Ads или Meta — бесплатный аудит рекламного кабинета и медиаплан на 3 месяца <strong>(550 BYN)</strong>.</p>
+          <a href="#contact" class="btn btn--white">Забронировать аудит</a>
+          <p class="promo__fine">Для новых клиентов. Не суммируется с другими предложениями.</p>
+        </div>
+        <div class="promo__timer">
+          <p>До конца акции осталось:</p>
+          <div class="timer" id="timer">
+            <div><span id="t-days">00</span><small>дней</small></div>
+            <div><span id="t-hours">00</span><small>часов</small></div>
+            <div><span id="t-mins">00</span><small>минут</small></div>
+            <div><span id="t-secs">00</span><small>секунд</small></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="company">
+  <section class="section" id="process">
     <div class="container">
-      <h2 class="section__title">Реквизиты</h2>
-      <div class="company-grid">
-        <div class="company-card glass">
-          <h3>Исполнитель</h3>
-          <dl id="company-info"></dl>
+      <div class="section__head reveal">
+        <span class="section__tag">Процесс</span>
+        <h2>Как мы работаем</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span>01</span><h3>Заявка и бриф</h3><p>Обсуждаем цели, аудиторию и бюджет. Бесплатная консультация 30 минут.</p></div>
+        <div class="step reveal"><span>02</span><h3>Стратегия</h3><p>Разрабатываем медиаплан и настраиваем рекламные кабинеты.</p></div>
+        <div class="step reveal"><span>03</span><h3>Запуск</h3><p>Ведём кампании, еженедельно корректируем ставки и креативы.</p></div>
+        <div class="step reveal"><span>04</span><h3>Отчёт и счёт</h3><p>В конце месяца — акт, счёт и понятный отчёт по KPI.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--lavender" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head reveal">
+        <span class="section__tag">FAQ</span>
+        <h2>Частые вопросы</h2>
+      </div>
+      <div class="faq">
+        <details class="faq__item reveal"><summary>Сколько стоит ведение рекламы?</summary><p>Зависит от площадки и бюджета. Google/Meta — расчётная стоимость услуг + рекламный бюджет. Яндекс и TikTok — от 550 BYN/мес за сопровождение.</p></details>
+        <details class="faq__item reveal"><summary>Как быстро запустите?</summary><p>Аудит и настройка — 5–10 рабочих дней после подписания договора.</p></details>
+        <details class="faq__item reveal"><summary>Работаете без НДС?</summary><p>Да, на упрощённой системе налогообложения (УСН).</p></details>
+        <details class="faq__item reveal"><summary>Можно только одну площадку?</summary><p>Да, начните с Google или Meta — остальные подключим по мере роста.</p></details>
+        <details class="faq__item reveal"><summary>Как оплачивается рекламный бюджет?</summary><p>Напрямую в кабинеты или через нас — обсудим удобный вариант при заключении договора.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="section__tag">Контакты</span>
+          <h2>Обсудим ваш проект</h2>
+          <p>Оставьте заявку — свяжемся в течение рабочего дня.</p>
+          <dl class="requisites">
+            <div><dt>Компания</dt><dd>ООО «Мастерская рекламного слова»</dd></div>
+            <div><dt>УНП</dt><dd>191762550</dd></div>
+            <div><dt>Адрес</dt><dd>220004, Минск, ул. Короля, 51, оф. 37</dd></div>
+            <div><dt>Банк</dt><dd>ОАО «Сбер Банк», BPSBBY2X</dd></div>
+            <div><dt>Р/сч</dt><dd>BY81BPSB30123394840109330000</dd></div>
+            <div><dt>Директор</dt><dd>Т.Н. Судник</dd></div>
+          </dl>
         </div>
-        <div class="company-card glass">
-          <h3>Заказчик</h3>
-          <dl id="client-info"></dl>
-        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <label>Имя<input type="text" name="name" required placeholder="Ваше имя" /></label>
+          <label>Телефон<input type="tel" name="phone" required placeholder="+375 (__) ___-__-__" /></label>
+          <label>Email<input type="email" name="email" placeholder="email@company.by" /></label>
+          <label>Площадка
+            <select name="platform">
+              <option value="">Выберите</option>
+              <option>Google Ads</option>
+              <option>Meta</option>
+              <option>Яндекс</option>
+              <option>TikTok</option>
+              <option>Все площадки</option>
+            </select>
+          </label>
+          <label>Комментарий<textarea name="message" rows="3" placeholder="Расскажите о задаче"></textarea></label>
+          <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+          <p class="form-msg" id="form-msg" hidden>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+        </form>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© <span id="footer-year"></span> ООО «Мастерская рекламного слова»</p>
-      <p class="footer__meta">Данные из Google Таблиц · Обновлено <span id="footer-date"></span></p>
+      <div class="logo logo--footer">
+        <span class="logo__mark">М</span>
+        <span>Мастерская рекламного слова</span>
+      </div>
+      <p>© <span id="year"></span> ООО «Мастерская рекламного слова». Минск.</p>
+      <a href="analytics.html">Аналитика счетов</a>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="landing.js"></script>
 </body>
 </html>

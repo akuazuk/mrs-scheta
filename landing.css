@@ -145,6 +145,11 @@ a:hover { text-decoration: underline; }
 .trust__logo--m { background: #fce7f3; color: #be185d; }
 .trust__logo--y { background: #fef3c7; color: #b45309; }
 .trust__logo--t { background: #ede9fe; color: #6d28d9; }
+.trust__logo--ai { background: #e0e7ff; color: #4338ca; }
+.trust__badge {
+  font-weight: 700; font-size: 0.9rem; color: #4f46e5;
+  padding: 8px 16px; background: #eef2ff; border-radius: 100px;
+}
 
 /* Sections */
 .section { padding: 100px 0; }
@@ -209,24 +214,26 @@ blockquote {
   font-style: italic; color: var(--text-muted); background: rgba(255,255,255,0.6); border-radius: 0 12px 12px 0;
 }
 
-/* Analytics */
-.analytics-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 40px; }
-.analytics-stats .stat {
-  background: var(--white); border-radius: var(--radius-sm); padding: 20px; text-align: center;
-  border: 1px solid rgba(55, 65, 81, 0.06); box-shadow: var(--shadow);
+/* AI section */
+.ai-block__text { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+.ai-block__text h2 {
+  font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800; letter-spacing: -0.02em; margin: 12px 0 16px;
 }
-.analytics-stats .stat strong { display: block; font-size: 1.5rem; font-weight: 800; }
-.analytics-stats .stat span { font-size: 0.8rem; color: var(--text-muted); }
-.charts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.chart-box {
-  background: var(--white); border-radius: var(--radius); padding: 24px;
+.ai-block__text p { color: var(--text-muted); margin-bottom: 12px; }
+.ai-block__sub { font-size: 0.95rem; font-style: italic; }
+.ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.ai-card {
+  background: var(--white); border-radius: var(--radius); padding: 28px 24px;
   border: 1px solid rgba(55, 65, 81, 0.06); box-shadow: var(--shadow);
+  transition: transform 0.25s;
 }
-.chart-box--wide { grid-column: 1 / -1; }
-.chart-box h3 { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; font-weight: 600; }
-.chart-box canvas { max-height: 260px; }
-.chart-box--wide canvas { max-height: 300px; }
+.ai-card:hover { transform: translateY(-4px); }
+.ai-card__icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+.ai-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.ai-card p { color: var(--text-muted); font-size: 0.9rem; }
 
+/* Analytics removed — chart styles kept for potential reuse */
 /* Promo */
 .promo__card {
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
@@ -309,7 +316,6 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 900px) {
   .hero__grid, .case, .contact-grid, .promo__card { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
-  .charts { grid-template-columns: 1fr; }
   .nav {
     display: none; position: fixed; top: 72px; left: 0; right: 0;
     background: var(--white); flex-direction: column; padding: 24px; gap: 16px;

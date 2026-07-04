@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="landing.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -128,6 +129,7 @@
           <p>Мы не просто настраиваем рекламу - мы внедряем AI-агентов, которые берут на себя рутину: обрабатывают заявки, готовят отчёты, ведут переписку с клиентами, следят за документооборотом и напоминают о задачах.</p>
           <p class="ai-block__sub">Робот учится на ваших правилах и данных, работает 24/7 и не уходит в отпуск. Человек остаётся за стратегией и сложными решениями.</p>
         </div>
+
         <div class="ai-grid">
           <div class="ai-card reveal">
             <div class="icon-box icon-box--ai"><i data-lucide="inbox"></i></div>
@@ -148,6 +150,88 @@
             <div class="icon-box icon-box--ai"><i data-lucide="workflow"></i></div>
             <h3>Любой бизнес-процесс</h3>
             <p>Согласования, напоминания, сбор данных из таблиц - обучаем робота под вашу специфику.</p>
+          </div>
+        </div>
+
+        <div class="ai-proof reveal">
+          <div class="ai-proof__head">
+            <span class="section__tag"><i data-lucide="bar-chart-3"></i> Система доказательств</span>
+            <h3>Цифры, схемы и результаты внедрения AI</h3>
+            <p>На реальных проектах клиентов фиксируем экономию времени, скорость обработки заявок и долю автоматизированных задач.</p>
+          </div>
+
+          <div class="ai-proof__metrics">
+            <div class="metric-card"><strong>−68%</strong><span>ручной рутины у администраторов</span></div>
+            <div class="metric-card"><strong>3 мин</strong><span>среднее время ответа робота</span></div>
+            <div class="metric-card"><strong>24/7</strong><span>приём заявок без выходных</span></div>
+            <div class="metric-card"><strong>+42%</strong><span>конверсия лидов в запись</span></div>
+          </div>
+
+          <div class="ai-proof__row">
+            <div class="ai-proof__visual">
+              <div class="img-frame">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=85" alt="AI-автоматизация бизнес-процессов" loading="lazy" />
+                <div class="img-frame__shine" aria-hidden="true"></div>
+              </div>
+              <div class="ai-flow">
+                <div class="ai-flow__step"><i data-lucide="mouse-pointer-click"></i><span>Заявка с сайта / рекламы</span></div>
+                <div class="ai-flow__arrow"><i data-lucide="arrow-down"></i></div>
+                <div class="ai-flow__step ai-flow__step--accent"><i data-lucide="bot"></i><span>AI-робот: квалификация и сценарий</span></div>
+                <div class="ai-flow__arrow"><i data-lucide="arrow-down"></i></div>
+                <div class="ai-flow__step"><i data-lucide="database"></i><span>CRM · таблицы · почта · мессенджеры</span></div>
+                <div class="ai-flow__arrow"><i data-lucide="arrow-down"></i></div>
+                <div class="ai-flow__step"><i data-lucide="user-check"></i><span>Менеджер получает готовую задачу</span></div>
+              </div>
+            </div>
+            <div class="ai-proof__charts">
+              <div class="chart-card">
+                <h4>Часы рутины в неделю</h4>
+                <p class="chart-card__note">До и после внедрения AI-робота</p>
+                <canvas id="chart-ai-hours"></canvas>
+              </div>
+              <div class="chart-card">
+                <h4>Что автоматизирует робот</h4>
+                <p class="chart-card__note">Средняя структура задач клиентов</p>
+                <canvas id="chart-ai-tasks"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-proof__charts ai-proof__charts--wide">
+            <div class="chart-card chart-card--wide">
+              <h4>Рост эффективности после запуска</h4>
+              <p class="chart-card__note">Индекс продуктивности команды, % от стартового уровня</p>
+              <canvas id="chart-ai-growth"></canvas>
+            </div>
+            <div class="chart-card">
+              <h4>Скорость обработки заявок</h4>
+              <p class="chart-card__note">Минуты: вручную vs с AI</p>
+              <canvas id="chart-ai-speed"></canvas>
+            </div>
+          </div>
+
+          <div class="ai-evidence">
+            <article class="evidence-card reveal">
+              <div class="evidence-card__icon"><i data-lucide="trending-down"></i></div>
+              <div>
+                <h4>Меньше ручного труда</h4>
+                <p>Робот забирает повторяющиеся действия: ввод данных, напоминания, первичные ответы клиентам.</p>
+              </div>
+            </article>
+            <article class="evidence-card reveal">
+              <div class="evidence-card__icon"><i data-lucide="shield-check"></i></div>
+              <div>
+                <h4>Меньше ошибок</h4>
+                <p>Единые правила обработки: робот не забывает поля, не пропускает этапы согласования.</p>
+              </div>
+            </article>
+            <article class="evidence-card reveal">
+              <div class="evidence-card__icon"><i data-lucide="line-chart"></i></div>
+              <div>
+                <h4>Измеримый результат</h4>
+                <p>Дашборд с KPI: заявки, время ответа, конверсия, экономия часов - всё в одном месте.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -195,7 +279,7 @@
       <div class="case">
         <div class="case__img reveal">
           <div class="img-frame img-frame--case">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=85" alt="Медицинский центр Кравира" loading="lazy" />
+            <img src="https://kravira.by/upload/iblock/09b/09b70c3d8c1d7f2faee6ea672552f96b.jpg" alt="Медицинский центр Кравира, пр. Победителей" loading="lazy" />
             <div class="img-frame__shine" aria-hidden="true"></div>
           </div>
         </div>
@@ -221,7 +305,7 @@
     <div class="container">
       <div class="promo__card reveal">
         <div class="promo__text">
-          <span class="pill pill--hot"><i data-lucide="gift"></i> Акция · до 15 июля 2026</span>
+          <span class="pill pill--hot"><i data-lucide="gift"></i> Акция · до <span id="promo-deadline">...</span></span>
           <h2>Старт лета - аудит рекламы и консультация по AI</h2>
           <p>При заключении договора на ведение Google Ads или Meta - бесплатный аудит кабинета и медиаплан на 3 месяца <strong>(550 BYN)</strong>. Плюс консультация: какие бизнес-процессы можно передать роботу.</p>
           <a href="#contact" class="btn btn--white">Забронировать</a>

@@ -1,15 +1,32 @@
-const PROMO_END = new Date("2026-07-15T23:59:59");
 const FORM_EMAIL = "akuazuk.ads@gmail.com";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${encodeURIComponent(FORM_EMAIL)}`;
 const SITE_URL = "https://akuazuk.github.io/mrs-scheta/";
+const CHART_COLORS = ["#93C5FD", "#C4B5FD", "#F9A8D4", "#FDE68A", "#86EFAC"];
+
+const MONTHS_RU = [
+  "января", "февраля", "марта", "апреля", "мая", "июня",
+  "июля", "августа", "сентября", "октября", "ноября", "декабря",
+];
+
+function getPromoEnd() {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
+}
+
+function formatPromoDeadline(end) {
+  return `${end.getDate()} ${MONTHS_RU[end.getMonth()]} ${end.getFullYear()}`;
+}
 
 function pad(n) {
   return String(n).padStart(2, "0");
 }
 
 function startTimer() {
+  const deadlineEl = document.getElementById("promo-deadline");
   const tick = () => {
-    const diff = PROMO_END - Date.now();
+    const end = getPromoEnd();
+    if (deadlineEl) deadlineEl.textContent = formatPromoDeadline(end);
+    const diff = end - Date.now();
     if (diff <= 0) {
       ["t-days", "t-hours", "t-mins", "t-secs"].forEach((id) => {
         const el = document.getElementById(id);
@@ -113,6 +130,101 @@ function initForm() {
   });
 }
 
+function initAiCharts() {
+  if (typeof Chart === "undefined") return;
+  Chart.defaults.color = "#6b7280";
+  Chart.defaults.borderColor = "rgba(55,65,81,0.08)";
+  Chart.defaults.font.family = "Inter, sans-serif";
+
+  const hoursEl = document.getElementById("chart-ai-hours");
+  if (hoursEl) {
+    new Chart(hoursEl, {
+      type: "bar",
+      data: {
+        labels: ["До AI", "После AI"],
+        datasets: [{
+          label: "Часов в неделю",
+          data: [38, 12],
+          backgroundColor: ["#FDE68A", "#93C5FD"],
+          borderRadius: 10,
+        }],
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, max: 45 } },
+      },
+    });
+  }
+
+  const tasksEl = document.getElementById("chart-ai-tasks");
+  if (tasksEl) {
+    new Chart(tasksEl, {
+      type: "doughnut",
+      data: {
+        labels: ["Заявки", "Отчёты", "Документы", "Поддержка", "Прочее"],
+        datasets: [{
+          data: [35, 22, 18, 17, 8],
+          backgroundColor: CHART_COLORS,
+          borderWidth: 0,
+        }],
+      },
+      options: {
+        responsive: true,
+        cutout: "62%",
+        plugins: { legend: { position: "bottom", labels: { usePointStyle: true, padding: 12 } } },
+      },
+    });
+  }
+
+  const growthEl = document.getElementById("chart-ai-growth");
+  if (growthEl) {
+    new Chart(growthEl, {
+      type: "line",
+      data: {
+        labels: ["Старт", "1 мес", "2 мес", "3 мес", "4 мес", "5 мес", "6 мес"],
+        datasets: [{
+          label: "Эффективность, %",
+          data: [100, 112, 125, 138, 149, 158, 168],
+          borderColor: "#6366f1",
+          backgroundColor: "rgba(99,102,241,0.15)",
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointBackgroundColor: "#6366f1",
+        }],
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: false, min: 90 } },
+      },
+    });
+  }
+
+  const speedEl = document.getElementById("chart-ai-speed");
+  if (speedEl) {
+    new Chart(speedEl, {
+      type: "bar",
+      data: {
+        labels: ["Вручную", "С AI"],
+        datasets: [{
+          label: "Минуты",
+          data: [47, 3],
+          backgroundColor: ["#F9A8D4", "#86EFAC"],
+          borderRadius: 10,
+        }],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true } },
+      },
+    });
+  }
+}
+
 function initIcons() {
   if (typeof lucide !== "undefined") lucide.createIcons();
 }
@@ -125,6 +237,7 @@ function init() {
   initBurger();
   initForm();
   showSentBanner();
+  initAiCharts();
   initIcons();
 }
 

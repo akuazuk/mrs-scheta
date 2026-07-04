@@ -290,7 +290,84 @@ blockquote {
 .ai-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .ai-card p { color: var(--text-muted); font-size: 0.9rem; }
 
-/* Analytics removed — chart styles kept for potential reuse */
+/* AI proof system */
+.ai-proof {
+  margin-top: 64px; padding-top: 56px;
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+}
+.ai-proof__head { text-align: center; max-width: 640px; margin: 0 auto 36px; }
+.ai-proof__head h3 {
+  font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 800; margin: 10px 0 12px;
+}
+.ai-proof__head p { color: var(--text-muted); font-size: 0.95rem; }
+
+.ai-proof__metrics {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px; margin-bottom: 40px;
+}
+.metric-card {
+  background: var(--white); border-radius: var(--radius-sm); padding: 22px 18px;
+  text-align: center; border: 1px solid rgba(55, 65, 81, 0.06); box-shadow: var(--shadow);
+}
+.metric-card strong {
+  display: block; font-size: 1.75rem; font-weight: 800;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.metric-card span { font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; display: block; }
+
+.ai-proof__row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 28px;
+}
+.ai-proof__visual { display: flex; flex-direction: column; gap: 20px; }
+.ai-proof__visual .img-frame img { aspect-ratio: 16/10; }
+
+.ai-flow {
+  background: var(--white); border-radius: var(--radius); padding: 24px;
+  border: 1px solid rgba(55, 65, 81, 0.06); box-shadow: var(--shadow);
+}
+.ai-flow__step {
+  display: flex; align-items: center; gap: 14px; padding: 12px 14px;
+  border-radius: var(--radius-sm); background: var(--bg);
+  font-size: 0.88rem; font-weight: 500;
+}
+.ai-flow__step--accent {
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+.ai-flow__step svg { width: 20px; height: 20px; color: #6366f1; flex-shrink: 0; }
+.ai-flow__arrow { display: flex; justify-content: center; padding: 4px 0; color: #c4b5fd; }
+.ai-flow__arrow svg { width: 18px; height: 18px; }
+
+.ai-proof__charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ai-proof__charts--wide { grid-template-columns: 1.4fr 1fr; }
+.chart-card {
+  background: var(--white); border-radius: var(--radius); padding: 22px;
+  border: 1px solid rgba(55, 65, 81, 0.06); box-shadow: var(--shadow);
+}
+.chart-card h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.chart-card__note { font-size: 0.75rem; color: var(--text-light); margin-bottom: 14px; }
+.chart-card canvas { max-height: 220px; }
+.chart-card--wide canvas { max-height: 240px; }
+
+.ai-evidence {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px; margin-top: 28px;
+}
+.evidence-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--white); border-radius: var(--radius-sm); padding: 20px;
+  border: 1px solid rgba(55, 65, 81, 0.06);
+}
+.evidence-card__icon {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  display: flex; align-items: center; justify-content: center;
+}
+.evidence-card__icon svg { width: 22px; height: 22px; color: #4f46e5; }
+.evidence-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
+.evidence-card p { font-size: 0.85rem; color: var(--text-muted); }
+
 /* Promo */
 .promo__card {
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
@@ -397,7 +474,8 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .hero__grid, .case, .contact-grid, .promo__card { grid-template-columns: 1fr; }
+  .hero__grid, .case, .contact-grid, .promo__card,
+  .ai-proof__row, .ai-proof__charts, .ai-proof__charts--wide { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .nav {
     display: none; position: fixed; top: 72px; left: 0; right: 0;

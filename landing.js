@@ -130,11 +130,52 @@ function initForm() {
   });
 }
 
+function chartGradient(ctx, c1, c2) {
+  const g = ctx.createLinearGradient(0, 0, 0, 280);
+  g.addColorStop(0, c1);
+  g.addColorStop(1, c2);
+  return g;
+}
+
 function initAiCharts() {
   if (typeof Chart === "undefined") return;
-  Chart.defaults.color = "#6b7280";
-  Chart.defaults.borderColor = "rgba(55,65,81,0.08)";
+  Chart.defaults.color = "#9ca3af";
+  Chart.defaults.borderColor = "rgba(99,102,241,0.06)";
   Chart.defaults.font.family = "Inter, sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.animation.duration = 1200;
+
+  const growthEl = document.getElementById("chart-ai-growth");
+  if (growthEl) {
+    const ctx = growthEl.getContext("2d");
+    new Chart(growthEl, {
+      type: "line",
+      data: {
+        labels: ["Старт", "1 мес", "2 мес", "3 мес", "4 мес", "5 мес", "6 мес"],
+        datasets: [{
+          data: [100, 112, 125, 138, 149, 158, 168],
+          borderColor: "#6366f1",
+          backgroundColor: chartGradient(ctx, "rgba(99,102,241,0.25)", "rgba(99,102,241,0)"),
+          fill: true,
+          tension: 0.42,
+          pointRadius: 5,
+          pointBackgroundColor: "#fff",
+          pointBorderColor: "#6366f1",
+          pointBorderWidth: 2,
+          borderWidth: 2.5,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: false, min: 90, grid: { color: "rgba(99,102,241,0.06)" }, ticks: { callback: (v) => v + "%" } },
+          x: { grid: { display: false } },
+        },
+      },
+    });
+  }
 
   const hoursEl = document.getElementById("chart-ai-hours");
   if (hoursEl) {
@@ -143,16 +184,21 @@ function initAiCharts() {
       data: {
         labels: ["До AI", "После AI"],
         datasets: [{
-          label: "Часов в неделю",
           data: [38, 12],
-          backgroundColor: ["#FDE68A", "#93C5FD"],
-          borderRadius: 10,
+          backgroundColor: ["rgba(253,230,138,0.85)", "rgba(147,197,253,0.9)"],
+          borderRadius: 12,
+          borderSkipped: false,
+          barThickness: 48,
         }],
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true, max: 45 } },
+        scales: {
+          y: { beginAtZero: true, max: 45, grid: { color: "rgba(99,102,241,0.06)" } },
+          x: { grid: { display: false } },
+        },
       },
     });
   }
@@ -166,38 +212,16 @@ function initAiCharts() {
         datasets: [{
           data: [35, 22, 18, 17, 8],
           backgroundColor: CHART_COLORS,
-          borderWidth: 0,
+          borderWidth: 3,
+          borderColor: "#fff",
+          hoverOffset: 8,
         }],
       },
       options: {
         responsive: true,
-        cutout: "62%",
-        plugins: { legend: { position: "bottom", labels: { usePointStyle: true, padding: 12 } } },
-      },
-    });
-  }
-
-  const growthEl = document.getElementById("chart-ai-growth");
-  if (growthEl) {
-    new Chart(growthEl, {
-      type: "line",
-      data: {
-        labels: ["Старт", "1 мес", "2 мес", "3 мес", "4 мес", "5 мес", "6 мес"],
-        datasets: [{
-          label: "Эффективность, %",
-          data: [100, 112, 125, 138, 149, 158, 168],
-          borderColor: "#6366f1",
-          backgroundColor: "rgba(99,102,241,0.15)",
-          fill: true,
-          tension: 0.4,
-          pointRadius: 4,
-          pointBackgroundColor: "#6366f1",
-        }],
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: false, min: 90 } },
+        maintainAspectRatio: false,
+        cutout: "68%",
+        plugins: { legend: { position: "bottom", labels: { usePointStyle: true, padding: 14, boxWidth: 8 } } },
       },
     });
   }
@@ -209,17 +233,22 @@ function initAiCharts() {
       data: {
         labels: ["Вручную", "С AI"],
         datasets: [{
-          label: "Минуты",
           data: [47, 3],
-          backgroundColor: ["#F9A8D4", "#86EFAC"],
+          backgroundColor: ["rgba(249,168,212,0.85)", "rgba(134,239,172,0.9)"],
           borderRadius: 10,
+          borderSkipped: false,
+          barThickness: 36,
         }],
       },
       options: {
         indexAxis: "y",
         responsive: true,
+        maintainAspectRatio: false,
         plugins: { legend: { display: false } },
-        scales: { x: { beginAtZero: true } },
+        scales: {
+          x: { beginAtZero: true, grid: { color: "rgba(99,102,241,0.06)" }, ticks: { callback: (v) => v + " мин" } },
+          y: { grid: { display: false } },
+        },
       },
     });
   }

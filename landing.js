@@ -1,5 +1,7 @@
 const FORM_EMAIL = "akuazuk.ads@gmail.com";
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${encodeURIComponent(FORM_EMAIL)}`;
+/* Токен FormSubmit (вместо email в URL) - после активации формы в письме на FORM_EMAIL */
+const FORM_TOKEN = "c5f09cf48b4ad132ef285567b601a2d3";
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${FORM_TOKEN}`;
 const SITE_URL = "https://akuazuk.github.io/mrs-scheta/";
 const CHART_COLORS = ["#93C5FD", "#C4B5FD", "#F9A8D4", "#FDE68A", "#86EFAC"];
 

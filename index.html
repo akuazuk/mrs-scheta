@@ -59,7 +59,7 @@
       <div class="hero__visual reveal">
         <div class="hero__art-stack">
           <div class="art-frame art-frame--hero">
-            <div class="art-scene art-scene--hero">
+            <div class="art-scene art-scene--hero" data-art-scene>
               <div class="art-glow art-glow--sky"></div>
               <div class="art-glow art-glow--rose"></div>
               <div class="art-dots"></div>
@@ -72,12 +72,19 @@
                         <stop offset="100%" stop-color="#6366f1"/>
                       </linearGradient>
                       <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.18"/>
+                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.22"/>
                         <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
                       </linearGradient>
+                      <filter id="peakGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="2.5" result="b"/>
+                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                      </filter>
                     </defs>
+                    <path class="art-viz-line__ghost" d="M0 85 L55 78 L105 80 L155 62 L205 52 L265 38 L300 28"/>
                     <path class="art-viz-line__area" d="M0 80 L50 65 L100 72 L150 48 L200 38 L260 22 L300 15 L300 100 L0 100 Z"/>
                     <path class="art-viz-line__stroke" d="M0 80 L50 65 L100 72 L150 48 L200 38 L260 22 L300 15"/>
+                    <circle class="art-viz-line__peak-halo" cx="300" cy="15" r="10"/>
+                    <circle class="art-viz-line__peak" cx="300" cy="15" r="4.5" filter="url(#peakGlow)"/>
                   </svg>
                   <div class="art-viz-bars">
                     <i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:50%"></i><i style="--h:72%"></i><i style="--h:88%"></i>
@@ -172,15 +179,19 @@
         </div>
         <div class="ai-hero__visual">
           <div class="art-frame">
-            <div class="art-scene art-scene--ai">
+            <div class="art-scene art-scene--ai" data-art-scene>
               <div class="art-glow art-glow--violet"></div>
               <div class="art-glow art-glow--pink"></div>
               <div class="art-dots"></div>
               <svg class="art-links" viewBox="0 0 400 280" aria-hidden="true">
-                <path class="art-link" d="M72 58 C120 80 160 120 200 140"/>
-                <path class="art-link" d="M328 62 C280 85 240 120 200 140"/>
-                <path class="art-link" d="M68 210 C120 185 160 155 200 140"/>
-                <path class="art-link" d="M332 208 C285 182 245 155 200 140"/>
+                <path class="art-link" id="link1" d="M72 58 C120 80 160 120 200 140"/>
+                <path class="art-link" id="link2" d="M328 62 C280 85 240 120 200 140"/>
+                <path class="art-link" id="link3" d="M68 210 C120 185 160 155 200 140"/>
+                <path class="art-link" id="link4" d="M332 208 C285 182 245 155 200 140"/>
+                <circle class="art-link-dot" r="3"><animateMotion dur="2.8s" repeatCount="indefinite" path="M72 58 C120 80 160 120 200 140"/></circle>
+                <circle class="art-link-dot art-link-dot--pink" r="3"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.6s" path="M328 62 C280 85 240 120 200 140"/></circle>
+                <circle class="art-link-dot art-link-dot--green" r="3"><animateMotion dur="3s" repeatCount="indefinite" begin="1.2s" path="M68 210 C120 185 160 155 200 140"/></circle>
+                <circle class="art-link-dot art-link-dot--amber" r="3"><animateMotion dur="3.4s" repeatCount="indefinite" begin="0.3s" path="M332 208 C285 182 245 155 200 140"/></circle>
               </svg>
               <div class="art-hub">
                 <span class="art-hub__ring art-hub__ring--1"></span>
@@ -218,8 +229,10 @@
           <div class="ai-bento__mini">
             <div class="art-glass art-glass--mini" aria-hidden="true">
               <div class="art-glass__body">
-                <svg class="art-viz-line art-viz-line--mini" viewBox="0 0 200 50">
+                <svg class="art-viz-line art-viz-line--mini" viewBox="0 0 200 50" aria-hidden="true">
+                  <path class="art-viz-line__area art-viz-line__area--mini" d="M0 40 Q30 35 60 28 T120 18 T200 8 L200 50 L0 50 Z"/>
                   <path class="art-viz-line__stroke" d="M0 40 Q30 35 60 28 T120 18 T200 8"/>
+                  <circle class="art-viz-line__peak art-viz-line__peak--mini" cx="200" cy="8" r="3"/>
                 </svg>
                 <div class="art-viz-bars art-viz-bars--mini">
                   <i style="--h:45%"></i><i style="--h:62%"></i><i style="--h:52%"></i><i style="--h:78%"></i><i style="--h:68%"></i>

@@ -254,6 +254,67 @@ function initAiCharts() {
   }
 }
 
+function initArtMotion() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const scenes = document.querySelectorAll("[data-art-scene]");
+  if (!scenes.length) return;
+
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const mouse = new Map();
+  let ticking = false;
+
+  const inViewObs = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.target.classList.toggle("art-inview", e.isIntersecting)),
+    { threshold: 0.2 }
+  );
+  scenes.forEach((s) => inViewObs.observe(s));
+
+  function update() {
+    ticking = false;
+    const vh = window.innerHeight;
+    scenes.forEach((scene) => {
+      const rect = scene.getBoundingClientRect();
+      if (rect.bottom < -80 || rect.top > vh + 80) return;
+      const py = ((rect.top + rect.height * 0.42 - vh * 0.5) / vh) * 48;
+      const m = mouse.get(scene) || { x: 0, y: 0 };
+      scene.style.setProperty("--py", py.toFixed(1));
+      scene.style.setProperty("--mx", m.x.toFixed(1));
+      scene.style.setProperty("--my", m.y.toFixed(1));
+    });
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  if (canHover) {
+    scenes.forEach((scene) => {
+      const frame = scene.closest(".art-frame");
+      if (!frame) return;
+      frame.addEventListener("mousemove", (e) => {
+        const r = frame.getBoundingClientRect();
+        mouse.set(scene, {
+          x: ((e.clientX - r.left) / r.width - 0.5) * 14,
+          y: ((e.clientY - r.top) / r.height - 0.5) * 10,
+        });
+        requestUpdate();
+      });
+      frame.addEventListener("mouseleave", () => {
+        mouse.set(scene, { x: 0, y: 0 });
+        requestUpdate();
+      });
+    });
+  }
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate, { passive: true });
+  update();
+}
+
 function initIcons() {
   if (typeof lucide !== "undefined") lucide.createIcons();
 }
@@ -267,6 +328,7 @@ function init() {
   initForm();
   showSentBanner();
   initAiCharts();
+  initArtMotion();
   initIcons();
 }
 

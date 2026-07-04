@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="landing.css" />
+  <link rel="stylesheet" href="graphics.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -56,14 +57,30 @@
         </div>
       </div>
       <div class="hero__visual reveal">
-        <div class="img-frame img-frame--hero">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85" alt="Искусственный интеллект и digital-маркетинг" loading="eager" />
-          <div class="img-frame__shine" aria-hidden="true"></div>
-          <div class="hero__float card-float">
+        <div class="hero__art-stack">
+          <div class="art-frame art-frame--hero">
+            <div class="art-scene art-scene--hero">
+              <div class="art-grid"></div>
+              <div class="art-orb art-orb--1"></div>
+              <div class="art-orb art-orb--2"></div>
+              <div class="art-spark art-spark--1"></div>
+              <div class="art-spark art-spark--2"></div>
+              <div class="art-spark art-spark--3"></div>
+              <div class="art-chart-rise" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="art-core art-core--mark">
+                <i data-lucide="trending-up"></i>
+              </div>
+            </div>
+          </div>
+          <div class="card-float card-float--static">
             <span class="card-float__icon"><i data-lucide="users"></i></span>
-            <span class="card-float__label">Нам доверяют</span>
-            <strong>500+</strong>
-            <span class="card-float__meta">клиентов · реклама и AI-автоматизация</span>
+            <div class="card-float__text">
+              <span class="card-float__label">Нам доверяют</span>
+              <strong>500+</strong>
+              <span class="card-float__meta">клиентов · реклама и AI</span>
+            </div>
           </div>
         </div>
       </div>
@@ -140,19 +157,44 @@
           </ul>
         </div>
         <div class="ai-hero__visual">
-          <div class="ai-showcase">
-            <div class="ai-showcase__glow" aria-hidden="true"></div>
-            <img src="https://images.unsplash.com/photo-1620712943543-bcc3988e9fdd?auto=format&fit=crop&w=1100&q=85" alt="AI-платформа автоматизации" loading="lazy" />
-            <div class="ai-showcase__chip ai-showcase__chip--1">
-              <i data-lucide="bot"></i>
+          <div class="art-frame">
+            <div class="art-scene art-scene--tall">
+              <div class="art-grid"></div>
+              <div class="art-orb art-orb--1"></div>
+              <div class="art-orb art-orb--2"></div>
+              <div class="art-orb art-orb--3"></div>
+              <div class="art-ring art-ring--1"></div>
+              <div class="art-ring art-ring--2"></div>
+              <div class="art-ring art-ring--3"></div>
+              <div class="art-line art-line--1"></div>
+              <div class="art-line art-line--2"></div>
+              <div class="art-line art-line--3"></div>
+              <span class="art-node art-node--1"></span>
+              <span class="art-node art-node--2"></span>
+              <span class="art-node art-node--3"></span>
+              <span class="art-node art-node--4"></span>
+              <svg class="art-beams" viewBox="0 0 400 280" aria-hidden="true">
+                <path class="art-beam" d="M72 62 Q 140 90 200 140" />
+                <path class="art-beam" d="M328 78 Q 260 110 200 140" />
+                <path class="art-beam" d="M88 196 Q 150 170 200 140" />
+                <path class="art-beam" d="M312 188 Q 250 165 200 140" />
+              </svg>
+              <div class="art-core">
+                <i data-lucide="bot"></i>
+              </div>
+            </div>
+          </div>
+          <div class="ai-stat-row">
+            <div class="ai-stat-pill">
+              <div class="ai-stat-pill__icon"><i data-lucide="bot"></i></div>
               <div><strong>AI Agent</strong><span>онлайн · обрабатывает заявку</span></div>
             </div>
-            <div class="ai-showcase__chip ai-showcase__chip--2">
-              <i data-lucide="zap"></i>
+            <div class="ai-stat-pill">
+              <div class="ai-stat-pill__icon"><i data-lucide="zap"></i></div>
               <div><strong>3 мин</strong><span>средний ответ клиенту</span></div>
             </div>
-            <div class="ai-showcase__chip ai-showcase__chip--3">
-              <i data-lucide="trending-up"></i>
+            <div class="ai-stat-pill">
+              <div class="ai-stat-pill__icon"><i data-lucide="trending-up"></i></div>
               <div><strong>+42%</strong><span>конверсия в запись</span></div>
             </div>
           </div>
@@ -165,7 +207,13 @@
           <h3>Умные AI-агенты</h3>
           <p>Не шаблонный чат-бот, а обученный робот на ваших правилах, документах и сценариях. Выполняет цепочку действий, а не просто отвечает текстом.</p>
           <div class="ai-bento__mini">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy" />
+            <div class="art-mini-dash" aria-hidden="true">
+              <div class="art-mini-dash__line"></div>
+              <div class="art-mini-dash__dot"></div>
+              <div class="art-mini-dash__bars">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
           </div>
         </article>
         <article class="ai-bento__card reveal">
@@ -303,8 +351,9 @@
 
       <div class="ai-proof-cards">
         <article class="ai-proof-card reveal">
-          <div class="ai-proof-card__img">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="" loading="lazy" />
+          <div class="art-thumb art-thumb--violet">
+            <div class="art-thumb__rings"></div>
+            <div class="art-thumb__icon"><i data-lucide="clock"></i></div>
           </div>
           <div class="ai-proof-card__body">
             <div class="ai-proof-card__icon"><i data-lucide="clock"></i></div>
@@ -313,8 +362,9 @@
           </div>
         </article>
         <article class="ai-proof-card reveal">
-          <div class="ai-proof-card__img">
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=500&q=80" alt="" loading="lazy" />
+          <div class="art-thumb art-thumb--blue">
+            <div class="art-thumb__rings"></div>
+            <div class="art-thumb__icon"><i data-lucide="shield-check"></i></div>
           </div>
           <div class="ai-proof-card__body">
             <div class="ai-proof-card__icon"><i data-lucide="shield-check"></i></div>
@@ -323,8 +373,9 @@
           </div>
         </article>
         <article class="ai-proof-card reveal">
-          <div class="ai-proof-card__img">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="" loading="lazy" />
+          <div class="art-thumb art-thumb--pink">
+            <div class="art-thumb__rings"></div>
+            <div class="art-thumb__icon"><i data-lucide="layout-dashboard"></i></div>
           </div>
           <div class="ai-proof-card__body">
             <div class="ai-proof-card__icon"><i data-lucide="layout-dashboard"></i></div>
@@ -387,9 +438,10 @@
       </div>
       <div class="case">
         <div class="case__img reveal">
-          <div class="img-frame img-frame--case">
+          <div class="art-photo art-frame--case">
             <img src="https://kravira.by/upload/iblock/09b/09b70c3d8c1d7f2faee6ea672552f96b.jpg" alt="Медицинский центр Кравира, пр. Победителей" loading="lazy" />
-            <div class="img-frame__shine" aria-hidden="true"></div>
+            <div class="art-photo__overlay"></div>
+            <span class="art-photo__badge"><i data-lucide="heart-pulse"></i> Партнёр · Минск</span>
           </div>
         </div>
         <div class="case__content reveal">

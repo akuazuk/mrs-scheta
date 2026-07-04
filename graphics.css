@@ -28,6 +28,7 @@
 /* Hero: client ecosystem orbit */
 .art-trust {
   position: relative; width: 88%; max-width: 280px; aspect-ratio: 1;
+  --orbit-r: 112px;
   transform: translate3d(
     calc(var(--mx) * -0.15 * 1px),
     calc(var(--py) * -0.18 * 1px + var(--my) * -0.1 * 1px),
@@ -67,12 +68,11 @@
 @keyframes art-trust-orbit-spin { to { transform: rotate(360deg); } }
 .art-trust-planet {
   position: absolute; top: 50%; left: 50%;
-  width: 0; height: 0;
-  transform: rotate(var(--a)) translateX(min(42%, 118px));
+  transform: rotate(var(--a)) translateX(var(--orbit-r));
 }
 .art-trust-planet__icon {
   display: flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; margin: -20px;
+  width: 40px; height: 40px; margin: -20px 0 0 -20px;
   border-radius: 14px;
   background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.95);
@@ -504,6 +504,9 @@
 @media (max-width: 600px) {
   .ai-stat-row { grid-template-columns: 1fr; }
   .art-chip--b { display: none; }
+  .art-trust { --orbit-r: 88px; }
+  .art-trust-planet__icon { width: 34px; height: 34px; margin: -17px 0 0 -17px; }
+  .art-trust-core { width: 64px; height: 64px; margin: -32px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

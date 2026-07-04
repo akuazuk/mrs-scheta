@@ -60,57 +60,32 @@
         <div class="hero__art-stack">
           <div class="art-frame art-frame--hero">
             <div class="art-scene art-scene--hero">
-              <div class="art-hex-grid"></div>
-              <div class="art-grid"></div>
-              <div class="art-scanline"></div>
-              <div class="art-orb art-orb--1"></div>
-              <div class="art-orb art-orb--2"></div>
-              <div class="art-spark art-spark--1"></div>
-              <div class="art-spark art-spark--2"></div>
-              <div class="art-spark art-spark--3"></div>
-              <div class="art-spark art-spark--4"></div>
-              <div class="art-spark art-spark--5"></div>
-              <svg class="art-line-chart" viewBox="0 0 400 220" aria-hidden="true">
-                <defs>
-                  <linearGradient id="heroLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.2"/>
-                    <stop offset="100%" stop-color="#6366f1"/>
-                  </linearGradient>
-                  <linearGradient id="heroAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
-                    <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path class="art-line-chart__area" d="M30 170 L80 145 L130 155 L180 115 L240 95 L310 65 L370 45 L370 200 L30 200 Z"/>
-                <path class="art-line-chart__path" d="M30 170 L80 145 L130 155 L180 115 L240 95 L310 65 L370 45"/>
-                <circle class="art-line-chart__dot" cx="370" cy="45" r="5"/>
-              </svg>
-              <div class="art-chart-rise" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <div class="art-hud">
-                <div class="art-hud__panel art-hud__panel--tl">
-                  <span class="art-hud__tag">KPI</span>
-                  <strong class="art-hud__val">+127%</strong>
-                  <span class="art-hud__sub">ROAS · 30d</span>
-                </div>
-                <div class="art-hud__panel art-hud__panel--tr">
-                  <span class="art-hud__tag">API</span>
-                  <div class="art-hud__dots"><i></i><i></i><i></i></div>
-                  <span class="art-hud__sub art-hud__sub--live">sync ok</span>
+              <div class="art-glow art-glow--sky"></div>
+              <div class="art-glow art-glow--rose"></div>
+              <div class="art-dots"></div>
+              <div class="art-glass">
+                <div class="art-glass__body">
+                  <svg class="art-viz-line" viewBox="0 0 300 100" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#93c5fd"/>
+                        <stop offset="100%" stop-color="#6366f1"/>
+                      </linearGradient>
+                      <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.18"/>
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="art-viz-line__area" d="M0 80 L50 65 L100 72 L150 48 L200 38 L260 22 L300 15 L300 100 L0 100 Z"/>
+                    <path class="art-viz-line__stroke" d="M0 80 L50 65 L100 72 L150 48 L200 38 L260 22 L300 15"/>
+                  </svg>
+                  <div class="art-viz-bars">
+                    <i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:50%"></i><i style="--h:72%"></i><i style="--h:88%"></i>
+                  </div>
                 </div>
               </div>
-              <div class="art-code-panel art-code-panel--hero">
-                <div class="art-code-panel__bar"><span></span><span></span><span></span></div>
-                <code class="art-code-panel__code">
-                  <span class="art-code-line">ads.optimize(budget)</span>
-                  <span class="art-code-line">crm.push(lead_id)</span>
-                  <span class="art-code-line">agent.notify()</span>
-                </code>
-              </div>
-              <div class="art-core art-core--mark">
-                <i data-lucide="trending-up"></i>
-              </div>
+              <div class="art-chip art-chip--a"><i data-lucide="trending-up"></i></div>
+              <div class="art-chip art-chip--b"><i data-lucide="target"></i></div>
             </div>
           </div>
           <div class="card-float card-float--static">
@@ -118,7 +93,7 @@
             <div class="card-float__text">
               <span class="card-float__label">Нам доверяют</span>
               <strong>500+</strong>
-              <span class="card-float__meta">клиентов · реклама и AI</span>
+              <span class="card-float__meta">клиентов по Беларуси</span>
             </div>
           </div>
         </div>
@@ -186,9 +161,9 @@
 
       <div class="ai-hero reveal">
         <div class="ai-hero__content">
-          <span class="ai-badge"><i data-lucide="sparkles"></i> AI Automation Platform</span>
-          <h2>Роботы, которые <span class="grad">освобождают команду</span> от рутины</h2>
-          <p class="ai-hero__lead">Обучаем AI-агентов под ваш бизнес: заявки, документы, отчёты и поддержка клиентов - 24/7, без выходных и человеческих ошибок.</p>
+          <span class="ai-badge"><i data-lucide="sparkles"></i> AI-автоматизация</span>
+          <h2>Роботы, которые <span class="grad">берут рутину на себя</span></h2>
+          <p class="ai-hero__lead">Настраиваем AI-агентов под ваш бизнес: принимают заявки, отвечают клиентам, собирают отчёты и работают с CRM - круглосуточно, без ошибок и выходных.</p>
           <ul class="ai-hero__tags">
             <li><i data-lucide="check-circle-2"></i> CRM и Google Таблицы</li>
             <li><i data-lucide="check-circle-2"></i> Telegram · Email · Сайт</li>
@@ -197,67 +172,39 @@
         </div>
         <div class="ai-hero__visual">
           <div class="art-frame">
-            <div class="art-scene art-scene--tall">
-              <div class="art-chrome"><span></span><span></span><span></span><em>agent_core · v2.4</em></div>
-              <div class="art-hex-grid"></div>
-              <div class="art-grid"></div>
-              <div class="art-scanline"></div>
-              <div class="art-orb art-orb--1"></div>
-              <div class="art-orb art-orb--2"></div>
-              <div class="art-orb art-orb--3"></div>
-              <div class="art-ring art-ring--1"></div>
-              <div class="art-ring art-ring--2"></div>
-              <div class="art-ring art-ring--3"></div>
-              <div class="art-orbit art-orbit--1"><i data-lucide="database"></i></div>
-              <div class="art-orbit art-orbit--2"><i data-lucide="webhook"></i></div>
-              <div class="art-orbit art-orbit--3"><i data-lucide="cpu"></i></div>
-              <span class="art-node art-node--1" data-label="TG"></span>
-              <span class="art-node art-node--2" data-label="CRM"></span>
-              <span class="art-node art-node--3" data-label="API"></span>
-              <span class="art-node art-node--4" data-label="Mail"></span>
-              <span class="art-node art-node--5" data-label="Sheet"></span>
-              <span class="art-node art-node--6" data-label="Site"></span>
-              <span class="art-packet art-packet--1"></span>
-              <span class="art-packet art-packet--2"></span>
-              <span class="art-packet art-packet--3"></span>
-              <span class="art-packet art-packet--4"></span>
-              <svg class="art-beams" viewBox="0 0 400 280" aria-hidden="true">
-                <path class="art-beam" d="M72 62 Q 140 90 200 140" />
-                <path class="art-beam" d="M328 78 Q 260 110 200 140" />
-                <path class="art-beam" d="M88 196 Q 150 170 200 140" />
-                <path class="art-beam" d="M312 188 Q 250 165 200 140" />
-                <path class="art-beam art-beam--dim" d="M200 52 Q 200 95 200 140" />
-                <path class="art-beam art-beam--dim" d="M48 140 Q 120 140 200 140" />
-                <path class="art-beam art-beam--dim" d="M352 140 Q 280 140 200 140" />
+            <div class="art-scene art-scene--ai">
+              <div class="art-glow art-glow--violet"></div>
+              <div class="art-glow art-glow--pink"></div>
+              <div class="art-dots"></div>
+              <svg class="art-links" viewBox="0 0 400 280" aria-hidden="true">
+                <path class="art-link" d="M72 58 C120 80 160 120 200 140"/>
+                <path class="art-link" d="M328 62 C280 85 240 120 200 140"/>
+                <path class="art-link" d="M68 210 C120 185 160 155 200 140"/>
+                <path class="art-link" d="M332 208 C285 182 245 155 200 140"/>
               </svg>
-              <div class="art-core">
-                <div class="art-core__pulse"></div>
-                <i data-lucide="bot"></i>
+              <div class="art-hub">
+                <span class="art-hub__ring art-hub__ring--1"></span>
+                <span class="art-hub__ring art-hub__ring--2"></span>
+                <div class="art-hub__core"><i data-lucide="bot"></i></div>
               </div>
-              <div class="art-terminal">
-                <div class="art-terminal__head"><span class="art-terminal__dot"></span> pipeline.py</div>
-                <code class="art-terminal__body">
-                  <span class="art-terminal__line"><b>async def</b> handle_lead():</span>
-                  <span class="art-terminal__line">&nbsp;&nbsp;score = llm.qualify(msg)</span>
-                  <span class="art-terminal__line">&nbsp;&nbsp;await crm.create(score)</span>
-                  <span class="art-terminal__line">&nbsp;&nbsp;return agent.reply()</span>
-                </code>
-              </div>
-              <div class="art-status art-status--ok"><i data-lucide="activity"></i> inference 42ms</div>
+              <div class="art-sat art-sat--1"><i data-lucide="messages-square"></i></div>
+              <div class="art-sat art-sat--2"><i data-lucide="database"></i></div>
+              <div class="art-sat art-sat--3"><i data-lucide="mail"></i></div>
+              <div class="art-sat art-sat--4"><i data-lucide="table-2"></i></div>
             </div>
           </div>
           <div class="ai-stat-row">
             <div class="ai-stat-pill">
               <div class="ai-stat-pill__icon"><i data-lucide="bot"></i></div>
-              <div><strong>AI Agent</strong><span>онлайн · обрабатывает заявку</span></div>
+              <div><strong>AI-агент</strong><span>принимает и обрабатывает заявки</span></div>
             </div>
             <div class="ai-stat-pill">
               <div class="ai-stat-pill__icon"><i data-lucide="zap"></i></div>
-              <div><strong>3 мин</strong><span>средний ответ клиенту</span></div>
+              <div><strong>3 минуты</strong><span>среднее время ответа клиенту</span></div>
             </div>
             <div class="ai-stat-pill">
               <div class="ai-stat-pill__icon"><i data-lucide="trending-up"></i></div>
-              <div><strong>+42%</strong><span>конверсия в запись</span></div>
+              <div><strong>+42%</strong><span>рост конверсии в запись</span></div>
             </div>
           </div>
         </div>
@@ -269,23 +216,14 @@
           <h3>Умные AI-агенты</h3>
           <p>Не шаблонный чат-бот, а обученный робот на ваших правилах, документах и сценариях. Выполняет цепочку действий, а не просто отвечает текстом.</p>
           <div class="ai-bento__mini">
-            <div class="art-mini-dash" aria-hidden="true">
-              <div class="art-mini-dash__chrome"><span></span><span></span><span></span> analytics.py</div>
-              <div class="art-mini-dash__kpis">
-                <div><small>leads</small><strong>1.2k</strong></div>
-                <div><small>conv</small><strong>42%</strong></div>
-                <div><small>latency</small><strong>38ms</strong></div>
-              </div>
-              <svg class="art-mini-dash__spark" viewBox="0 0 200 40">
-                <path d="M0 32 Q25 28 50 22 T100 18 T150 8 T200 4"/>
-              </svg>
-              <div class="art-mini-dash__line"></div>
-              <div class="art-mini-dash__dot"></div>
-              <div class="art-mini-dash__bars">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
-              <div class="art-mini-dash__stream">
-                <span>ingest</span><span>→</span><span>score</span><span>→</span><span>push</span>
+            <div class="art-glass art-glass--mini" aria-hidden="true">
+              <div class="art-glass__body">
+                <svg class="art-viz-line art-viz-line--mini" viewBox="0 0 200 50">
+                  <path class="art-viz-line__stroke" d="M0 40 Q30 35 60 28 T120 18 T200 8"/>
+                </svg>
+                <div class="art-viz-bars art-viz-bars--mini">
+                  <i style="--h:45%"></i><i style="--h:62%"></i><i style="--h:52%"></i><i style="--h:78%"></i><i style="--h:68%"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -426,11 +364,7 @@
       <div class="ai-proof-cards">
         <article class="ai-proof-card reveal">
           <div class="art-thumb art-thumb--violet">
-            <div class="art-circuit"></div>
-            <div class="art-thumb__graph">
-              <svg viewBox="0 0 120 40"><path d="M0 35 L20 28 L40 32 L60 18 L80 22 L100 8 L120 12"/></svg>
-            </div>
-            <div class="art-thumb__rings"></div>
+            <div class="art-thumb__blob"></div>
             <div class="art-thumb__icon"><i data-lucide="clock"></i></div>
           </div>
           <div class="ai-proof-card__body">
@@ -441,9 +375,7 @@
         </article>
         <article class="ai-proof-card reveal">
           <div class="art-thumb art-thumb--blue">
-            <div class="art-circuit"></div>
-            <div class="art-thumb__hex"></div>
-            <div class="art-thumb__rings"></div>
+            <div class="art-thumb__blob"></div>
             <div class="art-thumb__icon"><i data-lucide="shield-check"></i></div>
           </div>
           <div class="ai-proof-card__body">
@@ -454,9 +386,7 @@
         </article>
         <article class="ai-proof-card reveal">
           <div class="art-thumb art-thumb--pink">
-            <div class="art-circuit"></div>
-            <div class="art-thumb__bars"><i></i><i></i><i></i><i></i></div>
-            <div class="art-thumb__rings"></div>
+            <div class="art-thumb__blob"></div>
             <div class="art-thumb__icon"><i data-lucide="layout-dashboard"></i></div>
           </div>
           <div class="ai-proof-card__body">

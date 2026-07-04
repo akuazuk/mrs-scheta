@@ -59,40 +59,25 @@
       <div class="hero__visual reveal">
         <div class="hero__art-stack">
           <div class="art-frame art-frame--hero">
-            <div class="art-scene art-scene--hero" data-art-scene>
+            <div class="art-scene art-scene--hero art-scene--trust" data-art-scene>
               <div class="art-glow art-glow--sky"></div>
               <div class="art-glow art-glow--rose"></div>
               <div class="art-dots"></div>
-              <div class="art-glass">
-                <div class="art-glass__body">
-                  <svg class="art-viz-line" viewBox="0 0 300 100" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stop-color="#93c5fd"/>
-                        <stop offset="100%" stop-color="#6366f1"/>
-                      </linearGradient>
-                      <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.22"/>
-                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
-                      </linearGradient>
-                      <filter id="peakGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="2.5" result="b"/>
-                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                      </filter>
-                    </defs>
-                    <path class="art-viz-line__ghost" d="M0 85 L55 78 L105 80 L155 62 L205 52 L265 38 L300 28"/>
-                    <path class="art-viz-line__area" d="M0 80 L50 65 L100 72 L150 48 L200 38 L260 22 L300 15 L300 100 L0 100 Z"/>
-                    <path class="art-viz-line__stroke" d="M0 80 L50 65 L100 72 L150 48 L200 38 L260 22 L300 15"/>
-                    <circle class="art-viz-line__peak-halo" cx="300" cy="15" r="10"/>
-                    <circle class="art-viz-line__peak" cx="300" cy="15" r="4.5" filter="url(#peakGlow)"/>
-                  </svg>
-                  <div class="art-viz-bars">
-                    <i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:50%"></i><i style="--h:72%"></i><i style="--h:88%"></i>
-                  </div>
+              <div class="art-trust">
+                <div class="art-trust-orbit" aria-hidden="true">
+                  <div class="art-trust-planet" style="--a: 0deg"><span class="art-trust-planet__icon art-trust-planet__icon--g"><i data-lucide="search"></i></span></div>
+                  <div class="art-trust-planet" style="--a: 60deg"><span class="art-trust-planet__icon art-trust-planet__icon--m"><i data-lucide="instagram"></i></span></div>
+                  <div class="art-trust-planet" style="--a: 120deg"><span class="art-trust-planet__icon art-trust-planet__icon--ai"><i data-lucide="bot"></i></span></div>
+                  <div class="art-trust-planet" style="--a: 180deg"><span class="art-trust-planet__icon"><i data-lucide="building-2"></i></span></div>
+                  <div class="art-trust-planet" style="--a: 240deg"><span class="art-trust-planet__icon"><i data-lucide="stethoscope"></i></span></div>
+                  <div class="art-trust-planet" style="--a: 300deg"><span class="art-trust-planet__icon"><i data-lucide="shopping-bag"></i></span></div>
+                </div>
+                <div class="art-trust-ring art-trust-ring--1"></div>
+                <div class="art-trust-ring art-trust-ring--2"></div>
+                <div class="art-trust-core">
+                  <i data-lucide="users"></i>
                 </div>
               </div>
-              <div class="art-chip art-chip--a"><i data-lucide="trending-up"></i></div>
-              <div class="art-chip art-chip--b"><i data-lucide="target"></i></div>
             </div>
           </div>
           <div class="card-float card-float--static">
@@ -227,16 +212,23 @@
           <h3>Умные AI-агенты</h3>
           <p>Не шаблонный чат-бот, а обученный робот на ваших правилах, документах и сценариях. Выполняет цепочку действий, а не просто отвечает текстом.</p>
           <div class="ai-bento__mini">
-            <div class="art-glass art-glass--mini" aria-hidden="true">
-              <div class="art-glass__body">
-                <svg class="art-viz-line art-viz-line--mini" viewBox="0 0 200 50" aria-hidden="true">
-                  <path class="art-viz-line__area art-viz-line__area--mini" d="M0 40 Q30 35 60 28 T120 18 T200 8 L200 50 L0 50 Z"/>
-                  <path class="art-viz-line__stroke" d="M0 40 Q30 35 60 28 T120 18 T200 8"/>
-                  <circle class="art-viz-line__peak art-viz-line__peak--mini" cx="200" cy="8" r="3"/>
-                </svg>
-                <div class="art-viz-bars art-viz-bars--mini">
-                  <i style="--h:45%"></i><i style="--h:62%"></i><i style="--h:52%"></i><i style="--h:78%"></i><i style="--h:68%"></i>
-                </div>
+            <div class="art-agent-flow" aria-hidden="true">
+              <div class="art-agent-flow__node art-agent-flow__node--in">
+                <i data-lucide="message-circle"></i>
+              </div>
+              <div class="art-agent-flow__bridge">
+                <span class="art-agent-flow__track"></span>
+                <span class="art-agent-flow__pulse"></span>
+              </div>
+              <div class="art-agent-flow__node art-agent-flow__node--bot">
+                <i data-lucide="bot"></i>
+              </div>
+              <div class="art-agent-flow__bridge">
+                <span class="art-agent-flow__track"></span>
+                <span class="art-agent-flow__pulse art-agent-flow__pulse--delay"></span>
+              </div>
+              <div class="art-agent-flow__node art-agent-flow__node--out">
+                <i data-lucide="circle-check"></i>
               </div>
             </div>
           </div>
